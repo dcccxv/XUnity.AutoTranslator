@@ -2350,7 +2350,7 @@ namespace XUnity.AutoTranslator.Plugin.Core
                      WaitForTextStablization(
                         ui: ui,
                         info: info,
-                        delay: delay, // 0.9 second to prevent '1 second tickers' from getting translated
+                        delay: 0.1, // 0.9 second to prevent '1 second tickers' from getting translated
                         maxTries: retries, // 60 tries, about 1 minute
                         currentTries: 0,
                         onMaxTriesExceeded: () =>
@@ -2372,7 +2372,7 @@ namespace XUnity.AutoTranslator.Plugin.Core
             CoroutineHelper.Start(
                WaitForTextStablization(
                   textKey: textKey,
-                  delay: delay,
+                  delay: 0.1,
                   onTextStabilized: () =>
                   {
                      // if we already have translation loaded in our _translatios dictionary, simply load it and set text
